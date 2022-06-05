@@ -91,7 +91,7 @@ class AuthenticationController extends ApplicationController {
 
       // eslint-disable-next-line no-extra-boolean-cast
       if (!!existingUser) {
-        const err = new EmailAlreadyTakenError(email);
+        const err = new EmailNotRegisteredError(email);
         res.status(422).json(err);
         return;
       }
